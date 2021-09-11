@@ -6,13 +6,38 @@
     <!-- Load plotly.js into the DOM -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src='d3.min.js'></script>
+    <style>
+        #main {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px;
+        }
+        #description {
+            /*border: 2px solid #bfa;*/
+            width: 550px;
+            height: 500px;
+            left: 20px;
+            overflow: scroll;
+        }
+        p{
+            text-indent: 2em;
+        }
+    </style>
 </head>
 <body style="background-color:#00192E;">                  <!-- 设置页面背景颜色 -->
 <h1 align="center"style=" color:white;">我国四大地理区域的街道方向熵统计</h1>
 <body>
-
-<!-- 定义图表显示区域 -->
-<div id="myDiv" style="width: 800px; height: 500px; position: absolute; left:580px"></div>
+<div id="main">
+    <div id="description" style="color: ghostwhite">
+        <p>大兴安岭-阴山-贺兰山为北方地区和西北地区的分界线，受地形与植被覆盖影响，西北及北方地区的街道模式呈现出一定的相似性，城市街道网模式趋于规则，街道方向熵较小，主要分布在2.50到3.20间，在其他区间也有少量分布。</p>
+        <p>南方地区多丘陵，受其影响，相较于北方，南方城市的街道网模式多呈不规则状，如受地形影响较大的重庆市与受水系影响的武汉市等。此外，南方地区的城市街道方向熵主要分布在3.40附近。</p>
+        <p>南方地区和青藏地区的分界是我国第一阶梯和第二阶梯的分界线（昆仑山脉—祁连山脉—横断山脉），相较于其他地区，青藏地区的城市街道网模式在地形的影响下也呈现出较为不规则的特征。街道方向熵的分布集中在3.00左右。</p>
+        <p>我国的北方和南方，以秦岭—淮河一线作为分界线，受气温、降水等的影响，两地区在地形、气候、河流流量和植被类型等方面均有明显差异，此外不同地区的人文地理也存在着差异性，这些因素影响了城市的街道网模式。</p>
+        <img src="https://files.alexhchu.com/2021/09/11/19e23c289e2bb.png" alt="中国四大地理区域分布图" width="500">
+    </div>
+    <!-- 定义图表显示区域 -->
+    <div id="myDiv" style="width: 800px; height: 500px; "></div>
+</div>
 
 <script>
     d3.csv("https://raw.githubusercontent.com/Kittywyk/violin_plots.github.io/main/statistics.csv",
